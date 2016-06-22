@@ -10,17 +10,17 @@ body {
 	position: fixed;
 	background:#000;
 	height:100%;
-	width: 60px;
+	width: 70px;
 }
 
 #menu-but {
-	width:60px;
+	width:70px;
 	position:relative;
 	float: right;
 }
 
 #menu-but svg {
-	height:60px;
+	height:70px;
 }
 
 .row {
