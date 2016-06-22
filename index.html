@@ -30,23 +30,23 @@ menuwidth = widdd;
 menu.click(function() {
 	if (menuclick == 0) {
 		menuclick = 3;
-		pol1.animate({transform: "s1.0 1.0 t0 0 r-45,25,20", opacity: "1"}, 100, mina.minaeaseout);
-		pol3.animate({transform: "s1.0 1.0 t0 0 r45,25,30", opacity: "1"}, 100, mina.minaeaseout);
-		pol2.animate({transform: "s1.0 1.0 t3 0 r0,30,30", opacity: "1"}, 100, mina.minaeaseout);
+		pol1.animate({transform: "s1.0 1.0 t0 0 r-45,25,20", opacity: "1"}, 400, mina.minaeaseout);
+		pol3.animate({transform: "s1.0 1.0 t0 0 r45,25,30", opacity: "1"}, 400, mina.minaeaseout);
+		pol2.animate({transform: "s1.0 1.0 t3 0 r0,30,30", opacity: "1"}, 400, mina.minaeaseout);
 		$("#menu1").animate({"width":menuwidth + "px"}, 400);
 		setTimeout(function() {
 			menuclick = 1;
-		},400);
+		},410);
 	}
 	else if (menuclick == 1) {
 		menuclick = 3;
-		pol1.animate({transform: "s1.0 1.0 t0 0 r0,25,20", opacity: "1"}, 100, mina.minaeaseout);
-		pol3.animate({transform: "s1.0 1.0 t0 0 r0,25,30", opacity: "1"}, 100, mina.minaeaseout);
-		pol2.animate({transform: "s1.0 1.0 t0 0 r0,30,30", opacity: "1"}, 100, mina.minaeaseout);
+		pol1.animate({transform: "s1.0 1.0 t0 0 r0,25,20", opacity: "1"}, 400, mina.minaeaseout);
+		pol3.animate({transform: "s1.0 1.0 t0 0 r0,25,30", opacity: "1"}, 400, mina.minaeaseout);
+		pol2.animate({transform: "s1.0 1.0 t0 0 r0,30,30", opacity: "1"}, 400, mina.minaeaseout);
 		$("#menu1").animate({"width":"70px"}, 400);
 		setTimeout(function() {
 			menuclick = 0;
-		},400);
+		},410);
 	}
 });
 
