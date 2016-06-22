@@ -6,11 +6,27 @@
 body {
 	background: #111;
 }
+#menu1 {
+	position: fixed;
+	background:#000;
+	height:100%;
+	width: 60px;
+}
+
+#menu-but {
+	width:60px;
+	position:relative;
+	float: right;
+}
+
+#menu-but svg {
+	height:60px;
+}
 
 .row {
 	background: #999;
 	display: table;
-	width:100%;
+	width: 100%;
 	height: auto;
 }
 .col-1 {width: 8.33%;display: table-cell;}
