@@ -26,9 +26,6 @@ pol3 = menu.select('#pol3');
 
 menuclick = 0;
 menuwidth = widdd;
-$("#menu-but").css({"width":"40px"});
-$("#menu1").css({"width":"40px"});
-menubutwidth = 40;
 
 menu.click(function() {
 	if (menuclick == 0) {
@@ -46,7 +43,7 @@ menu.click(function() {
 		pol1.animate({transform: "s1.0 1.0 t0 0 r0,25,20", opacity: "1"}, 100, mina.minaeaseout);
 		pol3.animate({transform: "s1.0 1.0 t0 0 r0,25,30", opacity: "1"}, 100, mina.minaeaseout);
 		pol2.animate({transform: "s1.0 1.0 t0 0 r0,30,30", opacity: "1"}, 100, mina.minaeaseout);
-		$("#menu1").animate({"width":menubutwidth + "px"}, 400);
+		$("#menu1").animate({"width":60 + "px"}, 400);
 		setTimeout(function() {
 			menuclick = 0;
 		},400);
@@ -63,9 +60,6 @@ location.reload();
 
 
 if (widdd > 768) {
-	menubutwidth = 60;
-	$("#menu-but").css({"width":"60px"});
-	$("#menu1").css({"width":"60px"});
 	menuwidth = 400;
 	//ANIMATIONS
 	dungeon.animate({transform: "s1.0 1.0 t-300 60 r0,270,50", opacity: "1"}, 0, mina.minaeaseout);
