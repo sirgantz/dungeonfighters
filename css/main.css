@@ -21,7 +21,8 @@ body {
 }
 
 #menu-but svg {
-	height:70px;
+	max-width:70px;
+	height: auto;
 }
 
 .row {
