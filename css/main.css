@@ -16,6 +16,8 @@ body {
 
 #menu-but {
 	max-width:70px;
+	width: 70px;
+	height:70px;
 	position:relative;
 	float: right;
 }
