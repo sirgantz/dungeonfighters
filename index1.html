@@ -1,0 +1,469 @@
+<html>
+<head>
+<title>
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquerycolors.js"></script>
+<script type="text/javascript" src="js/snap.js"></script>
+<script type="text/javascript" src="js/blur.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script src="js/2dskin.js" type="text/javascript"></script>
+<script src="js/three.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css" charset="utf-8" />
+<style type="text/css">
+@import "font/lobster.css";
+@import "font/attentica.css";
+@import "font/airport.css";
+@import "font/aleksandrac.css";
+@import "font/aleksandra.css";
+@import "font/acline.css";
+
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 222, 0, 1);
+}
+
+body {background:#fff}
+.block1 {background-image:url('img/back1.jpg'); height:600px;background-attachment: fixed;}
+.block2 {background:#141717;background-image:url('img/back2.jpg');background-attachment: fixed;}
+#head {font-family: 'Lobster';font-size:30pt;color:white;}
+
+#header {width:300px;height:300px;background-image:url('img/head.svg');background-size:100% 100%;position:relative;top:80px;opacity:0}
+#per1 {opacity:0;height:0%}
+#per2 {opacity:0;height:0%}
+
+* {margin:0px;padding:0px}
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+
+setTimeout(function() {
+$("#TMCwrapper").css({"background":"none","border":"0px solid white"});
+$("#TMCtitle").css({"color":"ffde00","font-family":"Lobster","font-size":"16pt"});
+$("#TMCbutton").css({"background-color":"ffde00","font-family":"Lobster","font-size":"14pt","color":"black"});
+
+
+$("#trademcGetForm").animate({"opacity":"1"}, 1000);
+$("#donattext").animate({"opacity":"1"}, 700);
+}, 800);
+
+
+
+
+$("#header").animate({"opacity":"1"}, 2000);
+
+
+$("#per1").click(function(){
+        $("#per1").contents().filter("img").wrap("<b/>");
+    });
+
+
+widdd = $("#block1").width();
+if (widdd >= 751)
+{
+$("#header").css({"width":"400px","height":"400px"});
+$("#per1").css({"height":"100%"});
+$(".block1").css({"background-attachment":"fixed"});
+$("#per2").css({"height":"100%"});
+setTimeout(function() {
+$("#per1").animate({"opacity":"1"}, 500);
+$("#per2").animate({"opacity":"1"}, 1200);
+$("#light").animate({"opacity":"1"}, 500);
+setTimeout(function() {
+$("#light").animate({"opacity":"0"}, 600);
+}, 500);
+
+//$('#myframe').contents().find("body").animate({"scrollTop":"30px"},300);
+//$("body").animate({"scrollTop":0},300);
+//$("#block1").animate({"scrollTop":"30px"},300);
+
+}, 2000);
+}
+else
+{
+$(".block1").css({"background-attachment":"scroll"});
+$("#header").css({"width":"300px","height":"300px"});
+$("#per1").css({"height":"0px","opacity":"0"});
+$("#per2").css({"height":"0px","opacity":"0"});
+}
+
+
+$(window).on('resize', function(){
+widdd = $("#block1").width();
+if (widdd >= 751)
+{
+$("#header").css({"width":"400px","height":"400px"});
+$("#per1").css({"height":"100%"});
+$(".block1").css({"background-attachment":"fixed"});
+$("#per2").css({"height":"100%"});
+$("#per1").css({"opacity":"1"});
+$("#per2").css({"opacity":"1"});
+}
+else
+{
+$(".block1").css({"background-attachment":"scroll"});
+$("#header").css({"width":"300px","height":"300px"});
+$("#per1").css({"height":"0px","opacity":"0"});
+$("#per2").css({"height":"0px","opacity":"0"});
+}
+});
+
+
+
+b1();
+
+
+function b1() {
+ticon1 = 0;
+timer1 = setInterval(function() {
+		ticon1 = ticon1 + 0.5;
+		if (ticon1 < 30) {
+		$("#icon").css({"-webkit-transform":"rotate("+ticon1+"deg)"});
+		$("#icon").css({"-moz-transform":"rotate("+ticon1+"deg)"});
+		$("#icon").css({"-o-transform":"rotate("+ticon1+"deg)"});
+		}
+		else {
+		clearInterval(timer1);
+		b2();
+		}
+		},1);
+}
+
+function b2() {
+ticon2 = 30;
+timer2 = setInterval(function() {
+		ticon2 = ticon2 - 0.5;
+		if (ticon2 > 0) {
+		$("#icon").css({"-webkit-transform":"rotate("+ticon2+"deg)"});
+		$("#icon").css({"-moz-transform":"rotate("+ticon2+"deg)"});
+		$("#icon").css({"-o-transform":"rotate("+ticon2+"deg)"});
+		}
+		else {
+		clearInterval(timer2);
+		setTimeout(function() {
+		b1();
+		}, 3000);
+		}
+		},1);
+}
+
+
+$("#m1").bind( "mouseenter", function( event ) {
+$("#m1").animate({"color":"#ffde00"}, 300);
+});
+$("#m1").bind( "mouseleave", function( event ) {
+$("#m1").animate({"color":"#fff"}, 300);
+});
+
+$("#m2").bind( "mouseenter", function( event ) {
+$("#m2").animate({"color":"#ffde00"}, 300);
+});
+$("#m2").bind( "mouseleave", function( event ) {
+$("#m2").animate({"color":"#fff"}, 300);
+});
+
+$("#m3").bind( "mouseenter", function( event ) {
+$("#m3").animate({"color":"#ffde00"}, 300);
+});
+$("#m3").bind( "mouseleave", function( event ) {
+$("#m3").animate({"color":"#fff"}, 300);
+});
+
+$("#m4").bind( "mouseenter", function( event ) {
+$("#m4").animate({"color":"#03C4FF"}, 300);
+});
+$("#m4").bind( "mouseleave", function( event ) {
+$("#m4").animate({"color":"#fff"}, 300);
+});
+
+
+$( "#myframe" ).contents().find(".player").bind( "mouseenter", function( event ) {
+alert('+');
+});
+
+
+$("#map").click(function() {
+	$("#map").animate({"height":"150px","width":"150px"},200);
+	setTimeout(function() {
+	$("#map").animate({"height":"140px","width":"140px"},120);
+	currentimg = document.querySelector("#imgview");
+	currentimg.innerHTML = "<center><div style='background:#111;width:100%;height:100%;'><iframe style='margin-top:0px' id='myframe' src='http://mc.world-trigger.ru:8123/' frameborder='0' scrolling='no' width='100%' height='100%'></iframe> <div style='height:100px;width:100px;background:red;'></div> </div></center>";
+	$("#imgview").css({"height":"100%"});
+	$("#imgview").animate({"opacity":"1"},300);
+	$("#imgclose").css({"height":"80px"});
+	$("#imgclose").animate({"opacity":"1"},300);
+	
+	}, 100);
+});
+
+$("#imgclose").click(function() {
+	$("#imgview").animate({"opacity":"0"},300);
+	$("#imgclose").animate({"opacity":"0"},300);
+	setTimeout(function() {
+	$("#imgview").css({"height":"0%"});
+	$("#imgclose").css({"height":"0%"});
+	}, 300);
+});
+
+
+});
+
+</script>
+</head>
+<body>
+
+<div id="imgclose" style="position:fixed;width:80px;height:0px;background-image:url('img/close.png');background-size:100% 100%;z-index:99999;right:0;opacity:0;margin:2%">
+</div>
+
+<div id="imgview" style="background:url('img/black.png');width:100%;position:fixed;z-index:9999;overflow:hidden;height:0%;opacity:0">
+</div>
+
+
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top" style="background:none;box-shadow:none;border:0px black;padding-top:0px">
+<div class="container" style="background-image:url('img/black.png');width:100%">
+<div class="navbar-header" style="margin-left:5%">
+<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" style="background:white;box-shadow:none;border:0px black">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="#block1" class="navbar-brand" style="font-family: 'Lobster';font-size:18pt;color:white;text-shadow: 0.5px 0.5px 2px #638d85;"><img src="img/icon.png" id="icon" height="30px" style="float:right">World Trigger Craft</a>
+</div>
+<div id="navbarCollapse" class="collapse navbar-collapse" style="box-shadow:none;border:0px black">
+<!--
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Home</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="#">Messages</a></li>
+</ul>-->
+<ul class="nav navbar-nav navbar-right" style="color:white;font-family: 'AleksandraC';font-size:14pt;">
+<li><a href="#block1" style="color:white;" id="m1">Домой</a></li>
+<li><a href="#block2" style="color:white;" id="m2">Донат</a></li>
+<li><a href="#block3" style="color:white;" id="m3">О сервере</a></li>
+<li><a href="https://vk.com/world_trigger_craft" target="_blank" style="color:white;" id="m4">Вконтакте</a></li>
+</ul>
+ </div>
+</div>
+</nav>
+
+<div class="container-fluid block1" id="block1">
+<center>
+<!--
+<div id="head" style="padding-top:130px">
+<p style="font-size:70pt;">World</p>
+<p style="font-size:70pt;position:relative;top:-70px">Trigger</p>
+<p style="font-size:30pt;font-family: 'AC line';position:relative;top:-90px">Craft MMORPG</p>
+</div>
+-->
+<div class="col-sm-3" id="per1" style="background:none;height:100%">
+<img src="img/per1.png" width="100%" style="position:relative;bottom:-80px">
+</div>
+<div class="col-sm-6">
+<div id="header">
+<img src="img/light.png" width="100%" id="light" style="opacity:0">
+
+
+
+
+
+</div>
+</div>
+<div class="col-sm-3" id="per2" style="background:none;height:100%;overflow:hidden">
+<img src="img/per2.png" width="100%" style="position:relative;bottom:-80px">
+</div>
+</center>
+</div>
+
+
+
+
+<div class="container-fluid block2" id="block2">
+<div class="row">
+<div class="col-sm-5">
+<!--<img src="img/donat.png" width="80%" style="position:relative;bottom:-0px">-->
+
+<div id="donattext" style="margin:10%;font-size:12pt;font-family: 'AleksandraC';color:#fff;opacity:0">
+<p>
+Как купить привилегию: 
+<ul>
+<li>
+Внимательно прочитайте <a href="https://vk.com/topic-97554790_31966524" target="_blank" style="color:#ffde00">правила сервера</a>
+</li>
+<li>
+Введите ваш ник, который используете на сервере
+</li>
+<li>
+Выберите привилегию, которую хотите купить
+</li>
+<li>
+Нажмите кнопку "Продолжить"
+</li>
+<li>
+Выберите способ оплаты (Webmoney или другие способы)
+</li>
+<li>
+После оплаты перезайдите на сервер
+</li>
+<ul>
+</p>
+</div>
+
+</div>
+<div class="col-sm-7">
+<script src="http://trademc.org/api/form/script.js"></script> 
+<div id="trademcGetForm" style="padding:5%;padding-top:25px;opacity:0"></div> 
+<script>TradeMC.Form({Shop: 2857, Title: "Купить донат", Nickname: "Введите Ваш никнейм", Item: "Выберите товар", Coupon: "Введите купон, если есть", Button: "Продолжить"});</script>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-6">
+</div>
+<div class="col-sm-6">
+</div>
+</div>
+
+</div>
+<!--
+<div style="overflow:hidden;width:100%;height:210px">
+<iframe style="margin-top:-190px" id="myframe" src="https://minecraft-statistic.net/ru/userbars/html/server/banner_62974_36433c_141f19_ffffff_ffb65f_1c250f_ffffff_ffffff_1_1_0.html" frameborder="0" scrolling="no" width="100%" height="400"></iframe>
+</div>-->
+
+<div class="container-fluid block3" id="block3" style="overflow:hidden;width:100%;background:#ffde00">
+<!--<iframe style="margin-top:0px" id="myframe" src="http://mc.world-trigger.ru:8123/" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>-->
+
+<div class="row">
+<div class="col-sm-4" id="map2">
+
+
+
+<div id="circlemap" style="width:300px;height:300px;margin:10%;border:0px solid #111;border-radius:150px;background:red;background-image:url('img/maps.png');background-attachment:fixed;overflow:hidden">
+<div style="width:300px;height:300px;position:absolute;background-image:url('img/black.png');opacity:1;border:0px solid #111;border-radius:150px;"></div>
+<img src="img/map.png" id="map" style="width:140px;height:140px;margin-top:80px;margin-left:80px;position:absolute;">
+
+</div>
+</div>
+<div class="col-sm-8" style="padding:5%;font-size:12pt;font-family: 'AleksandraC';">
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      
+	  <div id="info1" style="width:100%;background:#F9F9F9;padding:10px;margin-top:0%;border:1px solid #fff;border-radius:8px;">
+<p>Вас ждёт система навыков, прокачивая и развивая которые, Вы получите дополнительные возможности, которые не только облегчат и разнообразят ванильное выживание, но и позволят исследовать глубины данжа. </p>
+</div>
+<div id="info2" style="width:100%;background:#F9F9F9;padding:10px;margin-top:3%;border:1px solid #fff;border-radius:8px;">
+<p>IP: <b>MC.WORLD-TRIGGER.RU</b></p>
+<div style="overflow:hidden;width:100%;height:110px">
+<iframe style="margin-top:-300px" id="myframe" src="https://minecraft-statistic.net/ru/userbars/html/server/banner_62974_36433c_141f19_ffffff_ffb65f_1c250f_ffffff_ffffff_1_1_0.html" frameborder="0" scrolling="no" width="100%" height="400"></iframe>
+</div>
+</div>
+	  
+    </div>
+
+    <div class="item">
+      <iframe width="100%" height="285px" src="https://www.youtube.com/embed/zdyGWNDebW8" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="info3" style="width:90%;background:#F9F9F9;padding:10px;margin:5%;margin-top:0;border:1px solid #fff;border-radius:8px;font-size:12pt;font-family: 'AleksandraC';">
+<p>Так же на сервере имеются:
+<ul class="list-group">
+<li class="list-group-item">- Данжи с боссами.</li>
+<li class="list-group-item">- Клановые войны.</li>
+<li class="list-group-item">- SKY-WARS</li>
+<li class="list-group-item">- Уникальная и очень красивая карта.</li>
+<li class="list-group-item">- Честное PVP. Никто не нападет на вас в креативе или режиме бога.</li>
+<li class="list-group-item">- Частые конкурсы.</li>
+<li class="list-group-item">- Никаких дюпов.</li>
+<li class="list-group-item">- Не лагает.</li>
+<li class="list-group-item">- Постоянно обновляем и улучшаем.</li>
+<li class="list-group-item">- Огромное количество полезных навыков.</li>
+<li class="list-group-item">- Жажда </li>
+<li class="list-group-item">- Виртуальный магазин и торговцы.</li>
+<li class="list-group-item">- АНТИЧИТ!</li>
+<li class="list-group-item">- Платные команды, для использования которых нужны монеты.</li>
+<li class="list-group-item">- Прокачка здоровья за убийство мобов и игроков. </li>
+<li class="list-group-item">- Много интересных работ. </li>
+<li class="list-group-item">- Квесты за которые можно получить не только деньги, но и уникальные предметы, которые не создать самому. </li>
+<li class="list-group-item">- Боссы с которых выпадает хороший лут. </li>
+<li class="list-group-item">- Детально проработанная экономика. </li>
+<li class="list-group-item">- Смена скинов по нику. (/skin set НИК)</li>
+<li class="list-group-item">- Свадьбы. </li>
+<li class="list-group-item">- Кланы. </li>
+<li class="list-group-item">- Удобное меню с полезной информацией и быстрым доступом.</li>
+<li class="list-group-item">- PvP арена. </li>
+<li class="list-group-item">- MOB арена.</li>
+<li class="list-group-item">- Кейсы.</li>
+</ul>
+</p>
+</div>
+
+
+
+
+</div>
+
+
+<div class="container-fluid block4" id="block4" style="overflow:hidden;width:100%;background-image:url('img/back2.jpg');font-size:12pt;font-family: 'AleksandraC';color:white;padding:5%">
+<center>
+<p id="footer">© 2016 <b style="color:#ffde00">World Trigger Craft MMORPG.</b> All Rights Reserved.<br>Design by <a href="https://vk.com/theodoreit" style="color:white">Virstyuk Bogdan</a></p>
+<br>
+
+<a href="https://vk.com/world_trigger_craft" target="_blank">
+<div style="background-image:url('img/icons/vk.jpg');background-size:100% 100%;height:30px;width:30px;display:inline-block">
+</div></a>
+<a href="https://www.youtube.com/channel/UCENas4Oa0KXHdtw2olItL3w" target="_blank">
+<div style="background-image:url('img/icons/youtube.jpg');background-size:100% 100%;height:30px;width:30px;display:inline-block">
+</div></a>
+<a href="https://vk.com/nychnii_kote" target="_blank">
+<div style="background-image:url('img/icons/oleg.jpg');background-size:100% 100%;height:30px;width:30px;display:inline-block">
+</div></a>
+
+</center>
+</div>
+
+
+
+
+</body>
+
+</html>
+
